@@ -1,0 +1,97 @@
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+$light-gray: hsl(0, 0%, 95%);
+
+$mobile-breakpoint: 980px;
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lexend Deca';
+  background-color: $light-gray;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+
+  @media (min-width: $mobile-breakpoint) {
+    flex-direction: row;
+  }
+}
+
+.card {
+  width: 305px;
+  padding: 40px;
+
+  &.orange {
+    background-color: $bright-orange;
+    .card-footer .btn {
+      color: $bright-orange;
+    }
+  }
+  &.cyan {
+    background-color: $dark-cyan;
+    .card-footer .btn {
+      color: $dark-cyan;
+    }
+  }
+  &.dark-cyan {
+    background-color: $very-dark-cyan;
+    .card-footer .btn {
+      color: $very-dark-cyan;
+    }
+  }
+
+  .card-header h1 {
+    margin: 40px 0;
+    font-size: 40px;
+    font-family: 'Big Shoulders Display';
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $light-gray;
+  }
+
+  .card-body p {
+    font-weight: 400;
+    line-height: 1.5;
+    color: $transparent-white;
+  }
+
+  .card-footer .btn {
+    margin-top: 80px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background-color: $light-gray;
+    font-size: 18px;
+    font-family: inherit;
+
+    &:active {
+      outline: 2px solid $light-gray;
+      background-color: transparent;
+      color: $light-gray;
+    }
+  }
+}
